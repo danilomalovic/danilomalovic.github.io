@@ -88,6 +88,7 @@ section {
     border-radius: 50%;
     border: 3px solid #fff;
     margin-bottom: 1rem;
+    object-fit: cover;
 }
 
 .home-container h1 {
