@@ -1,115 +1,24 @@
 :root {
     --primary-color: #1a2a4a;
-    --secondary-color: #2e4a7d;
-    --accent-color: #00aaff;
     --text-color: #ffffff;
 }
 
-/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     background-color: var(--primary-color);
     color: var(--text-color);
-}
-
-a {
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--text-color);
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    z-index: 10;
-    background-color: rgba(26, 42, 74, 0.8);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo a {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
-.nav-links {
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 2.5rem;
-}
-
-.nav-links a {
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.burger {
-    display: none;
-    cursor: pointer;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Main */
-main {
-    padding-top: 6rem;
-}
-
-section {
-    padding: 6rem 2rem;
-    text-align: center;
-}
-
-/* Home */
-#home {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    text-align: center;
 }
 
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-picture {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 5px solid var(--accent-color);
+.home-container img {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 2rem;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
 }
 
 .home-container h1 {
@@ -119,104 +28,4 @@ section {
 
 .home-container p {
     font-size: 1.8rem;
-    margin-bottom: 2.5rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1.2rem 2.5rem;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-/* Sections */
-#about, #experience, #projects, #contact {
-    background-color: var(--secondary-color);
-}
-
-#about {
-    background-color: var(--primary-color);
-}
-
-h2 {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-}
-
-/* Experience & Projects */
-.experience-item, .project-item {
-    background-color: var(--primary-color);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.experience-item:hover, .project-item:hover {
-    transform: translateY(-5px);
-}
-
-.experience-item h3, .project-item h3 {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-}
-
-/* Footer */
-footer {
-    padding: 3rem 1rem;
-    text-align: center;
-    background-color: var(--primary-color);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0;
-        height: 100vh;
-        top: 0;
-        background-color: var(--primary-color);
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        transition: all 0.5s ease-in-out;
-    }
-
-    .nav-links.nav-active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 2rem 0;
-    }
-
-    .burger {
-        display: block;
-        z-index: 11;
-    }
-
-    .burger.toggle .line1 {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .burger.toggle .line2 {
-        opacity: 0;
-    }
-
-    .burger.toggle .line3 {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
 }
