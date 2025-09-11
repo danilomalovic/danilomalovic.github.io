@@ -68,12 +68,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
+
+  flex: 1;
+
 }
 
 .menu a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 8rem;
+/* scales between 3rem and 8rem depending on viewport */
+font-size: clamp(3rem, 8vw, 8rem);
+
   font-weight: 600;
   position: relative;
   padding-left: 80px;
@@ -109,7 +115,6 @@ body {
   border-radius: 50%;
   border: 5px solid var(--accent-color);
 }
-
 .hero-image-wrapper {
   position: relative;
   display: inline-block;
@@ -189,7 +194,8 @@ section {
 
 
 .section-title {
-  font-size: 7rem;
+font-size: clamp(5rem, 6vw, 7rem);
+
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
@@ -273,16 +279,17 @@ section {
   }
 
   .menu a {
-    font-size: 4rem;
+font-size: clamp(3rem, 5vw, 4rem);
+
     padding-left: 0;
   }
 
   .menu a::before {
     display: none;
   }
+.section-title {
+  font-size: 4rem;
+}
 
-  .section-title {
-    font-size: 4rem;
-  }
 
 }
