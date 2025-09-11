@@ -72,7 +72,9 @@ body {
 .menu a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 8rem;
+/* scales with viewport but caps nicely */
+font-size: clamp(3rem, 8vw, 5rem);
+
   font-weight: 600;
   position: relative;
   padding-left: 80px;
@@ -129,7 +131,8 @@ section {
 
 
 .section-title {
-  font-size: 7rem;
+font-size: clamp(5rem, 6vw, 7rem);
+
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
@@ -213,7 +216,8 @@ section {
   }
 
   .menu a {
-    font-size: 4rem;
+font-size: clamp(3rem, 5vw, 4rem);
+
     padding-left: 0;
   }
 
@@ -221,8 +225,8 @@ section {
     display: none;
   }
 
-  .section-title {
-    font-size: 4rem;
-  }
+.section-title {
+  font-size: 4rem;
+}
 
 }
