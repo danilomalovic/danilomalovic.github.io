@@ -69,7 +69,9 @@ body {
   flex-direction: column;
   gap: 3rem;
 
+
   flex: 1;
+
 }
 
 .menu a {
@@ -112,6 +114,41 @@ font-size: clamp(3rem, 8vw, 8rem);
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid var(--accent-color);
+}
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-popout {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #2c2c2c;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-popout::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #2c2c2c transparent transparent transparent;
+}
+
+.hero-image-wrapper:hover .image-popout {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .nav-logos {
@@ -157,7 +194,7 @@ section {
 
 
 .section-title {
-font-size: clamp(5rem, 6vw, 7rem); /* already allows up to 7rem */
+font-size: clamp(5rem, 6vw, 7rem);
 
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -250,7 +287,6 @@ font-size: clamp(3rem, 5vw, 4rem);
   .menu a::before {
     display: none;
   }
-
 .section-title {
   font-size: 4rem;
 }
