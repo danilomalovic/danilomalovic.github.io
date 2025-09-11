@@ -10,11 +10,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  scroll-behavior: smooth;
 }
 
 .topbar {
@@ -61,28 +65,40 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+  flex: 1;
 }
 
 .menu a {
   color: var(--text-color);
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 8rem;
   font-weight: 600;
-  display: flex;
-  align-items: center;
+  position: relative;
+  padding-left: 80px;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu a::before {
   content: '';
-  width: 40px;
-  height: 4px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 6px;
   background: var(--accent-color);
-  margin-right: 20px;
+  transition: width 0.3s ease;
 }
 
 .menu a:hover {
   color: var(--accent-color);
+  transform: translateX(10px);
+}
+
+.menu a:hover::before {
+  width: 60px;
 }
 
 .hero-image {
@@ -91,6 +107,10 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid var(--accent-color);
+}
+
+section {
+  scroll-snap-align: start;
 }
 
 .full-section {
@@ -103,13 +123,13 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 
 .section-title {
-  font-size: 3rem;
+  font-size: 7rem;
   color: var(--accent-color);
   margin-bottom: 1rem;
 }
@@ -190,6 +210,19 @@ body {
 
   .menu {
     align-items: center;
+  }
+
+  .menu a {
+    font-size: 4rem;
+    padding-left: 0;
+  }
+
+  .menu a::before {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 4rem;
   }
 
 }
