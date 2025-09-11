@@ -54,11 +54,13 @@ body {
   fill: var(--accent-color);
 }
 
+
 .hero-section {
   min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 5rem;
   padding: 0 5%;
 }
 
@@ -66,14 +68,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
   flex: 1;
 }
 
 .menu a {
   color: var(--text-color);
   text-decoration: none;
-/* scales with viewport but caps nicely */
-font-size: clamp(3rem, 8vw, 5rem);
+/* scales between 3rem and 8rem depending on viewport */
+font-size: clamp(3rem, 8vw, 8rem);
 
   font-weight: 600;
   position: relative;
@@ -104,11 +107,34 @@ font-size: clamp(3rem, 8vw, 5rem);
 }
 
 .hero-image {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid var(--accent-color);
+}
+
+.nav-logos {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-20px);
+  opacity: 0;
+  display: flex;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav-logos img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.menu a:hover .nav-logos {
+  opacity: 1;
+  transform: translateY(-50%) translateX(10px);
 }
 
 section {
@@ -131,7 +157,7 @@ section {
 
 
 .section-title {
-font-size: clamp(5rem, 6vw, 7rem);
+font-size: clamp(5rem, 6vw, 7rem); /* already allows up to 7rem */
 
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -228,5 +254,6 @@ font-size: clamp(3rem, 5vw, 4rem);
 .section-title {
   font-size: 4rem;
 }
+
 
 }
