@@ -41,13 +41,16 @@ nav {
 }
 
 .logo {
-  font-weight: 600;
-  color: var(--text-color);
-  background: #282828;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-family: 'Lucida Console', monospace;
+  display: block;
   text-decoration: none;
+}
+
+.logo-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  display: block;
 }
 
 .nav-links {
