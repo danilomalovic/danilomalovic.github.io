@@ -10,11 +10,15 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  scroll-behavior: smooth;
 }
 
 .topbar {
@@ -91,6 +95,10 @@ body {
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid var(--accent-color);
+}
+
+section {
+  scroll-snap-align: start;
 }
 
 .full-section {
