@@ -12,9 +12,13 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1e1e2f, #121212);
+  background: var(--bg-color);
   color: var(--text-color);
   scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 header {
@@ -22,7 +26,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(20, 20, 20, 0.9);
+  background: var(--bg-color);
   z-index: 100;
 }
 
@@ -33,26 +37,36 @@ nav {
   padding: 1rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  height: 10vh;
 }
 
 .logo {
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--text-color);
+  background: #282828;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: 'Lucida Console', monospace;
+  text-decoration: none;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
+  background: #282828;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .nav-links li {
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 
 .nav-links a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  padding: 0.5rem;
 }
 
 .nav-links a:hover {
@@ -62,6 +76,8 @@ nav {
 .burger {
   display: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .burger div {
@@ -166,6 +182,8 @@ nav {
   height: 32px;
   fill: var(--text-color);
   transition: fill 0.3s ease;
+  background: #282828;
+  border-radius: 10%;
 }
 
 .social-links a:hover svg {
