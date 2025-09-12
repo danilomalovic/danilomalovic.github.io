@@ -284,10 +284,16 @@ font-size: clamp(5rem, 6vw, 7rem);
 }
 
 @media (max-width: 768px) {
+  .topbar {
+    position: fixed;
+    z-index: 1000;
+  }
+
   .hero-section {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    padding-top: 80px;
   }
 
   .menu {
@@ -295,15 +301,21 @@ font-size: clamp(5rem, 6vw, 7rem);
   }
 
   .menu a {
-font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(3rem, 5vw, 4rem);
   }
 
   .menu a::before {
     display: none;
   }
-.section-title {
-  font-size: 4rem;
-}
 
+  .hero-image {
+    width: 70vw;
+    height: 70vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
 
+  .section-title {
+    font-size: 4rem;
+  }
 }
