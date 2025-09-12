@@ -153,14 +153,17 @@ font-size: clamp(3rem, 8vw, 8rem);
 .nav-logos {
   position: absolute;
   top: 50%;
+
   left: 50%;
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
+
   pointer-events: none;
 }
 
 .nav-logos img {
+
   position: absolute;
   top: 0;
   left: 0;
@@ -170,27 +173,29 @@ font-size: clamp(3rem, 8vw, 8rem);
   opacity: 0;
   transform: translate(0, 0) scale(0);
   transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+
 }
 
 .menu a:hover .nav-logos img {
   opacity: 1;
+
   filter: drop-shadow(0 0 6px var(--accent-color));
 }
 
 .menu a:hover .nav-logos img:nth-child(1) {
+.menu a:hover .nav-logos img:nth-child(1) {
   transform: translate(-160px, 80px) scale(1.2);
 }
-
 .menu a:hover .nav-logos img:nth-child(2) {
   transform: translate(-70px, 120px) scale(1.2);
 }
-
 .menu a:hover .nav-logos img:nth-child(3) {
   transform: translate(70px, 120px) scale(1.2);
 }
-
 .menu a:hover .nav-logos img:nth-child(4) {
   transform: translate(160px, 80px) scale(1.2);
+}
+
 }
 
 section {
@@ -313,4 +318,8 @@ font-size: clamp(3rem, 5vw, 4rem);
 }
 
 
+}
+.menu a:hover .nav-logos img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px var(--accent-color));
 }
