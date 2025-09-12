@@ -72,10 +72,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
-
   flex: 1;
-
+  align-items: flex-start;
 }
 
 .menu a {
@@ -161,6 +159,7 @@ font-size: clamp(3rem, 8vw, 8rem);
   transform: translate(-50%, 10px);
   display: flex;
   gap: 1rem;
+  justify-content: center;
   pointer-events: none;
 }
 
