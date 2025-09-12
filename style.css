@@ -1,9 +1,7 @@
 :root {
-  --bg-color: #fdfdfd;
-  --accent-color: #8a63f6;
-  --text-color: #000000;
-  --surface-color: #f5f5f5;
-  --muted-color: #eaeaea;
+  --bg-color: #141414;
+  --accent-color: #7e5bef;
+  --text-color: #ffffff;
 }
 
 * {
@@ -35,8 +33,7 @@ body {
 }
 
 .intro {
-  background: var(--muted-color);
-  color: var(--text-color);
+  background: #2c2c2c;
   padding: 0.5rem 1rem;
   border-radius: 4px;
 }
@@ -71,7 +68,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
 
 
   flex: 1;
@@ -182,69 +178,6 @@ section {
   scroll-snap-align: start;
 }
 
-.hero-image-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.image-popout {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(10px);
-  background: var(--muted-color);
-  color: var(--text-color);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.image-popout::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: var(--muted-color) transparent transparent transparent;
-}
-
-.hero-image-wrapper:hover .image-popout {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-.nav-logos {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-20px);
-  opacity: 0;
-  display: flex;
-  gap: 0.5rem;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  pointer-events: none;
-}
-
-.nav-logos img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-.menu a:hover .nav-logos {
-  opacity: 1;
-  transform: translateY(-50%) translateX(10px);
-}
-
-section {
-  scroll-snap-align: start;
-}
-
 .full-section {
   min-height: 100vh;
   padding: 80px 20px;
@@ -261,7 +194,6 @@ section {
 
 
 .section-title {
-
 font-size: clamp(5rem, 6vw, 7rem);
 
   color: var(--accent-color);
@@ -293,7 +225,6 @@ font-size: clamp(5rem, 6vw, 7rem);
 .filter-btn.active,
 .filter-btn:hover {
   background: var(--accent-color);
-  color: var(--bg-color);
 }
 
 .experience-grid {
@@ -303,8 +234,7 @@ font-size: clamp(5rem, 6vw, 7rem);
 }
 
 .experience-card {
-  background: var(--surface-color);
-  color: var(--text-color);
+  background: #1f1f1f;
   padding: 1rem;
   border-radius: 8px;
   display: flex;
@@ -326,8 +256,7 @@ font-size: clamp(5rem, 6vw, 7rem);
 }
 
 .project-card {
-  background: var(--surface-color);
-  color: var(--text-color);
+  background: #1f1f1f;
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -350,7 +279,6 @@ font-size: clamp(5rem, 6vw, 7rem);
   }
 
   .menu a {
-
 font-size: clamp(3rem, 5vw, 4rem);
 
     padding-left: 0;
@@ -359,11 +287,9 @@ font-size: clamp(3rem, 5vw, 4rem);
   .menu a::before {
     display: none;
   }
-
 .section-title {
   font-size: 4rem;
 }
-
 
 
 }
