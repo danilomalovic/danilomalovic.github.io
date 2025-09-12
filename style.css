@@ -21,6 +21,10 @@ body {
   color: var(--text-color);
 }
 
+a {
+  color: var(--accent-color);
+}
+
 .topbar {
   position: absolute;
   top: 0;
