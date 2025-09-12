@@ -43,40 +43,44 @@
       <h2 class="section-title">ABOUT.</h2>
       <p class="about-description">I'm a software engineer passionate about building impactful solutions. Here's some of my experience.</p>
       <div class="experience-filters">
-        <button class="filter-btn">Leadership Experience</button>
-        <button class="filter-btn active">All Experience</button>
-        <button class="filter-btn">Work Experience</button>
+        <button class="filter-btn" data-target="leadership">Leadership Experience</button>
+        <button class="filter-btn active" data-target="all">All Experience</button>
+        <button class="filter-btn" data-target="work">Work Experience</button>
       </div>
-      <div class="experience-grid">
-        <div class="experience-card">
-          <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
-          <div>
-            <h3>Tesla</h3>
-            <p>Placeholder role description at Tesla.</p>
+      <div class="experience-content active" id="all">
+        <div class="experience-grid">
+          <div class="experience-card">
+            <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
+            <div>
+              <h3>Tesla</h3>
+              <p>Placeholder role description at Tesla.</p>
+            </div>
           </div>
-        </div>
-        <div class="experience-card">
-          <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
-          <div>
-            <h3>Microsoft</h3>
-            <p>Placeholder role description at Microsoft.</p>
+          <div class="experience-card">
+            <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
+            <div>
+              <h3>Microsoft</h3>
+              <p>Placeholder role description at Microsoft.</p>
+            </div>
           </div>
-        </div>
-        <div class="experience-card">
-          <img class="experience-logo" src="gm.svg" alt="General Motors logo">
-          <div>
-            <h3>General Motors</h3>
-            <p>Placeholder role description at General Motors.</p>
+          <div class="experience-card">
+            <img class="experience-logo" src="gm.svg" alt="General Motors logo">
+            <div>
+              <h3>General Motors</h3>
+              <p>Placeholder role description at General Motors.</p>
+            </div>
           </div>
-        </div>
-        <div class="experience-card">
-          <img class="experience-logo" src="mcmaster.svg" alt="McMaster University logo">
-          <div>
-            <h3>McMaster University</h3>
-            <p>Placeholder role description at McMaster University.</p>
+          <div class="experience-card">
+            <img class="experience-logo" src="mcmaster.svg" alt="McMaster University logo">
+            <div>
+              <h3>McMaster University</h3>
+              <p>Placeholder role description at McMaster University.</p>
+            </div>
           </div>
         </div>
       </div>
+      <div class="experience-content" id="leadership"></div>
+      <div class="experience-content" id="work"></div>
     </div>
   </section>
 
@@ -102,5 +106,6 @@
       <p>Feel free to reach out at <a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a>.</p>
     </div>
   </section>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -237,6 +237,14 @@ font-size: clamp(5rem, 6vw, 7rem);
   gap: 1.5rem;
 }
 
+.experience-content {
+  display: none;
+}
+
+.experience-content.active {
+  display: block;
+}
+
 .experience-card {
   background: #1f1f1f;
   padding: 1rem;
