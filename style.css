@@ -283,6 +283,18 @@ font-size: clamp(5rem, 6vw, 7rem);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
+.project-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-logo {
+  transform: scale(1.1);
+}
+
 @media (max-width: 768px) {
   .topbar {
     position: fixed;
