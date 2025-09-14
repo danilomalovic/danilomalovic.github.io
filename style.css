@@ -109,15 +109,16 @@ font-size: clamp(3rem, 8vw, 8rem);
   width: 60px;
 }
 
-.about-link {
+.about-title {
   position: relative;
+  display: inline-block;
 }
 
-.about-pointer {
+.experience-tooltip {
   position: absolute;
-  left: -220px;
+  left: 100%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(10px, -50%);
   background: #2c2c2c;
   color: var(--text-color);
   padding: 0.5rem 1rem;
@@ -125,15 +126,15 @@ font-size: clamp(3rem, 8vw, 8rem);
   white-space: nowrap;
 }
 
-.about-pointer::after {
+.experience-tooltip::after {
   content: '';
   position: absolute;
-  left: 100%;
+  left: -6px;
   top: 50%;
   transform: translateY(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: transparent transparent transparent #2c2c2c;
+  border-color: transparent #2c2c2c transparent transparent;
 }
 
 .hero-image {
