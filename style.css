@@ -280,6 +280,8 @@ font-size: clamp(5rem, 6vw, 7rem);
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .experience-logo {
@@ -304,6 +306,8 @@ font-size: clamp(5rem, 6vw, 7rem);
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -321,6 +325,40 @@ font-size: clamp(5rem, 6vw, 7rem);
 
 .project-card:hover .project-logo {
   transform: scale(1.1);
+}
+
+.experience-card::after,
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    #00f0ff,
+    #ff00ff,
+    #00f0ff
+  );
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  animation: border-orbit 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.experience-card:hover::after,
+.project-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes border-orbit {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {
