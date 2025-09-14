@@ -109,6 +109,33 @@ font-size: clamp(3rem, 8vw, 8rem);
   width: 60px;
 }
 
+.about-link {
+  position: relative;
+}
+
+.about-pointer {
+  position: absolute;
+  left: -220px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2c2c2c;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.about-pointer::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #2c2c2c;
+}
+
 .hero-image {
   width: 450px;
   height: 450px;

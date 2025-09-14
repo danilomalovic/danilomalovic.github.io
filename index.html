@@ -20,7 +20,8 @@
 
   <section id="home" class="hero-section">
     <nav class="menu">
-      <a href="#about">ABOUT
+      <a href="#about" class="about-link">ABOUT
+        <span class="about-pointer">Click to view more details</span>
         <span class="nav-logos">
           <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
           <img src="microsoft.svg" alt="Microsoft logo">
@@ -45,11 +46,11 @@
       <h2 class="section-title">ABOUT.</h2>
       <p class="about-description">I'm an Electrical &amp; Computer Engineering Co-Op student at McMaster University (GPA: 3.5/4.0) and a US &amp; Canadian citizen with experience at Microsoft, General Motors, and Tesla.</p>
       <div class="experience-filters">
-        <button class="filter-btn active" data-target="work">Work Experience</button>
-        <button class="filter-btn" data-target="all">All Experience</button>
+        <button class="filter-btn" data-target="work">Work Experience</button>
+        <button class="filter-btn active" data-target="all">All Experience</button>
         <button class="filter-btn" data-target="leadership">Leadership Experience</button>
       </div>
-      <div class="experience-content" id="all">
+      <div class="experience-content active" id="all">
         <div class="experience-grid">
           <div class="experience-card">
             <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
@@ -95,7 +96,7 @@
           </div>
         </div>
       </div>
-      <div class="experience-content active" id="work">
+      <div class="experience-content" id="work">
         <div class="experience-grid">
           <div class="experience-card">
             <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
