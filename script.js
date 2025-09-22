@@ -73,6 +73,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const contactForm = document.querySelector('#contact-form');
+  const formStatus = document.querySelector('#contact-form-status');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async event => {
+      event.preventDefault();
+
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : '';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+
+      if (formStatus) {
+        formStatus.textContent = 'Sending your message…';
+        formStatus.classList.remove('success', 'error');
+      }
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            Accept: 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Unable to submit form');
+        }
+
+        if (formStatus) {
+          formStatus.textContent = "Thanks for reaching out! I'll get back to you soon.";
+          formStatus.classList.add('success');
+        }
+
+        contactForm.reset();
+      } catch (error) {
+        if (formStatus) {
+          formStatus.textContent = 'Sorry, something went wrong. Please try again or reach out via LinkedIn.';
+          formStatus.classList.add('error');
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
+    });
+  }
+
   if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
 

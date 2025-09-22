@@ -29,7 +29,7 @@
         <ul class="hero-contact-list">
           <li>McMaster ECE Co-op '26</li>
           <li>Hamilton, ON, Canada</li>
-          <li><a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a></li>
+          <li class="hero-cta"><a class="hero-contact-button" href="#contact">Let's connect</a></li>
         </ul>
       </div>
       <div class="hero-visual">
@@ -254,15 +254,41 @@
   <section id="contact" class="full-section">
     <div class="container">
       <h2 class="section-title">Contact</h2>
-      <p>If you'd like to collaborate or just say hello, these are the best ways to reach me.</p>
-      <ul class="contact-list">
-        <li><strong>Email:</strong> <a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a></li>
-        <li><strong>Phone:</strong> <a href="tel:+13136579446">+1-313-657-9446</a></li>
-        <li><strong>Location:</strong> Hamilton, ON, Canada</li>
-        <li><strong>Website:</strong> <a href="https://malovic.ca" target="_blank" rel="noopener noreferrer">malovic.ca</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/danmalovic/" target="_blank" rel="noopener noreferrer">linkedin.com/in/danmalovic</a></li>
-        <li><strong>Project Site:</strong> <a href="https://plc.malovic.ca" target="_blank" rel="noopener noreferrer">plc.malovic.ca</a></li>
-      </ul>
+      <div class="contact-content">
+        <div class="contact-intro">
+          <p>If you'd like to collaborate or just say hello, share a few details below and I'll get back to you soon.</p>
+          <ul class="contact-meta">
+            <li><strong>Location:</strong> Hamilton, ON, Canada</li>
+            <li><strong>Website:</strong> <a href="https://malovic.ca" target="_blank" rel="noopener noreferrer">malovic.ca</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/danmalovic/" target="_blank" rel="noopener noreferrer">linkedin.com/in/danmalovic</a></li>
+            <li><strong>Project Site:</strong> <a href="https://plc.malovic.ca" target="_blank" rel="noopener noreferrer">plc.malovic.ca</a></li>
+          </ul>
+        </div>
+        <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/danmalovic@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from malovic.ca">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="form-field">
+              <label for="contact-company">Company (optional)</label>
+              <input type="text" id="contact-company" name="company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">How can I help?</label>
+            <textarea id="contact-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="contact-submit">Send message</button>
+          <p id="contact-form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
   </main>
