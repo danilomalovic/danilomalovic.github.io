@@ -320,17 +320,22 @@ font-size: clamp(5rem, 6vw, 7rem);
   inset: 0;
   border-radius: inherit;
   padding: 2px;
+  --gradient-angle: 0deg;
   background: conic-gradient(
-    from 0deg,
-    #00f0ff,
-    #ff00ff,
-    #00f0ff
+    from var(--gradient-angle),
+    rgba(126, 91, 239, 0) 0deg,
+    rgba(126, 91, 239, 0.5) 18deg,
+    rgba(0, 240, 255, 0.8) 30deg,
+    rgba(126, 91, 239, 0.5) 42deg,
+    rgba(126, 91, 239, 0) 60deg,
+    rgba(126, 91, 239, 0) 360deg
   );
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
-  animation: border-orbit 4s linear infinite;
+  animation: border-glow 8s linear infinite;
+  animation-play-state: paused;
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -339,11 +344,18 @@ font-size: clamp(5rem, 6vw, 7rem);
 .experience-card:hover::after,
 .project-card:hover::after {
   opacity: 1;
+  animation-play-state: running;
 }
 
-@keyframes border-orbit {
+@property --gradient-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-glow {
   to {
-    transform: rotate(360deg);
+    --gradient-angle: 360deg;
   }
 }
 
