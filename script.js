@@ -77,6 +77,137 @@ document.addEventListener('DOMContentLoaded', () => {
   const formStatus = document.querySelector('#contact-form-status');
 
   if (contactForm) {
+    const previewInputs = contactForm.querySelectorAll('[data-preview]');
+    const previewTargetMap = {};
+
+    contactForm.querySelectorAll('[data-preview-value]').forEach(node => {
+      const key = node.dataset.previewValue;
+
+      if (!key) {
+        return;
+      }
+
+      if (!previewTargetMap[key]) {
+        previewTargetMap[key] = [];
+      }
+
+      previewTargetMap[key].push(node);
+    });
+
+    const previewVibes = contactForm.querySelector('[data-preview-vibes]');
+    const vibeField = contactForm.querySelector('#contact-vibe');
+    const topicButtons = contactForm.querySelectorAll('.topic-chip');
+
+    const getCleanValue = element => {
+      if (!element || typeof element.value !== 'string') {
+        return '';
+      }
+
+      const raw = element.value;
+
+      if (element.tagName === 'TEXTAREA') {
+        const trimmed = raw.trim();
+        return trimmed.length > 0 ? trimmed : '';
+      }
+
+      if (element.type === 'email') {
+        return raw.replace(/\s+/g, '').trim();
+      }
+
+      return raw.replace(/\s+/g, ' ').trim();
+    };
+
+    const updatePreviewForInput = element => {
+      const key = element.dataset.preview;
+
+      if (!key) {
+        return;
+      }
+
+      const targets = previewTargetMap[key];
+
+      if (!targets) {
+        return;
+      }
+
+      const value = getCleanValue(element);
+      const hasContent = value.length > 0;
+
+      targets.forEach(target => {
+        const placeholder = target.dataset.placeholder || '';
+        const nextValue = hasContent ? value : placeholder;
+        target.textContent = nextValue;
+
+        if (target.classList.contains('preview-message')) {
+          target.classList.toggle('has-content', hasContent);
+        }
+      });
+
+      const inputWrapper = element.closest('.story-input');
+
+      if (inputWrapper) {
+        inputWrapper.classList.toggle('has-value', hasContent);
+      }
+
+      const messageWrapper = element.closest('.story-message');
+
+      if (messageWrapper) {
+        messageWrapper.classList.toggle('has-value', hasContent);
+      }
+    };
+
+    previewInputs.forEach(input => {
+      const handler = () => updatePreviewForInput(input);
+
+      input.addEventListener('input', handler);
+      input.addEventListener('change', handler);
+
+      updatePreviewForInput(input);
+    });
+
+    const formatList = items => {
+      if (items.length === 0) {
+        return '';
+      }
+
+      if (items.length === 1) {
+        return items[0];
+      }
+
+      if (items.length === 2) {
+        return `${items[0]} + ${items[1]}`;
+      }
+
+      const head = items.slice(0, -1).join(', ');
+      const tail = items[items.length - 1];
+      return `${head} + ${tail}`;
+    };
+
+    const updateTopics = () => {
+      const activeTopics = Array.from(topicButtons)
+        .filter(button => button.classList.contains('is-active'))
+        .map(button => button.dataset.topic)
+        .filter(Boolean);
+
+      if (vibeField) {
+        vibeField.value = activeTopics.join(', ');
+      }
+
+      if (previewVibes) {
+        previewVibes.textContent = activeTopics.length ? `P.S. ${formatList(activeTopics)}.` : '';
+      }
+    };
+
+    topicButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const isActive = button.classList.toggle('is-active');
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        updateTopics();
+      });
+    });
+
+    updateTopics();
+
     contactForm.addEventListener('submit', async event => {
       event.preventDefault();
 
@@ -113,6 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         contactForm.reset();
+        previewInputs.forEach(input => updatePreviewForInput(input));
+        topicButtons.forEach(button => {
+          button.classList.remove('is-active');
+          button.setAttribute('aria-pressed', 'false');
+        });
+        updateTopics();
       } catch (error) {
         if (formStatus) {
           formStatus.textContent = 'Sorry, something went wrong. Please try again or reach out via LinkedIn.';
