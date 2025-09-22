@@ -12,7 +12,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -107,7 +106,6 @@ a {
   justify-content: center;
   align-items: center;
   padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
-  scroll-snap-align: start;
 }
 
 .hero-content {
@@ -213,10 +211,6 @@ a {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
-}
-
-section {
-  scroll-snap-align: start;
 }
 
 .full-section {
