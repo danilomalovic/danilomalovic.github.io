@@ -170,6 +170,10 @@ a {
   box-shadow: 0 0 10px rgba(126, 91, 239, 0.6);
 }
 
+.hero-contact-list li.hero-cta::before {
+  display: none;
+}
+
 .hero-contact-list a {
   color: var(--text-color);
   text-decoration: none;
@@ -179,6 +183,33 @@ a {
 .hero-contact-list a:hover,
 .hero-contact-list a:focus-visible {
   color: var(--accent-color);
+}
+
+.hero-contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 24px rgba(126, 91, 239, 0.35);
+}
+
+.hero-contact-button:hover,
+.hero-contact-button:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(126, 91, 239, 0.45);
+  color: var(--text-color);
+}
+
+.hero-contact-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 4px;
 }
 
 .hero-visual {
@@ -468,29 +499,151 @@ a {
   line-height: 1.6;
 }
 
-.contact-list {
+.contact-content {
+  margin: 0 auto;
+  max-width: 960px;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-meta {
   list-style: none;
-  margin: 1.5rem auto 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: 480px;
-  text-align: left;
 }
 
-.contact-list strong {
+.contact-meta li {
+  display: flex;
+  gap: 0.5rem;
+  line-height: 1.6;
+}
+
+.contact-meta strong {
   color: rgba(255, 255, 255, 0.75);
   font-weight: 600;
 }
 
-.contact-list a {
+.contact-meta a {
   color: var(--accent-color);
   text-decoration: none;
 }
 
-.contact-list a:hover {
+.contact-meta a:hover,
+.contact-meta a:focus-visible {
   text-decoration: underline;
+}
+
+.contact-form {
+  background: #1f1f1f;
+  padding: 2.25rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+.contact-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(12, 12, 12, 0.9);
+  color: var(--text-color);
+  padding: 0.85rem 1rem;
+  font: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(126, 91, 239, 0.2);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  background: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 30px rgba(126, 91, 239, 0.35);
+}
+
+.contact-submit:hover,
+.contact-submit:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(126, 91, 239, 0.45);
+}
+
+.contact-submit:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 4px;
+}
+
+.contact-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-status {
+  min-height: 1.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-status.success {
+  color: #6ee7b7;
+}
+
+.form-status.error {
+  color: #fca5a5;
 }
 
 .experience-card::after,
