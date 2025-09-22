@@ -10,11 +10,13 @@
 </head>
 <body>
   <div class="topbar">
-    <span class="intro">Hi! My name is Danilo Malovic.</span>
+    <span class="intro">Danilo Malovic · Technical Program Manager / Product Manager</span>
     <div class="social-links">
-        <a href="https://www.linkedin.com/in/danmalovic/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+      <a href="https://malovic.ca" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://www.linkedin.com/in/danmalovic/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.372-1.85 3.605 0 4.271 2.372 4.271 5.458v6.283zm-14.4-11.78c-1.144 0-2.069-.926-2.069-2.069 0-1.144.925-2.07 2.069-2.07 1.143 0 2.069.926 2.069 2.07 0 1.143-.926 2.07-2.07 2.07zM7.325 20.452H3.771V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .77 0 1.723v20.549C0 23.23.792 24 1.771 24h20.451C23.2 24 24 23.23 24 22.272V1.723C24 .77 23.2 0 22.225 0z"/></svg>
       </a>
+      <a href="https://plc.malovic.ca" target="_blank" rel="noopener noreferrer">Project Site</a>
     </div>
   </div>
 
@@ -32,8 +34,18 @@
           <img src="macfe.svg" alt="MAC Formula Electric logo">
         </span>
       </a>
+      <a href="#skills">SKILLS</a>
       <a href="#contact">CONTACT</a>
     </nav>
+    <div class="hero-copy">
+      <h1 class="hero-name">Danilo Malovic</h1>
+      <p class="hero-headline">Technical Program Manager / Product Manager</p>
+      <p class="hero-location">Hamilton, ON, Canada · Dual citizen of the United States &amp; Canada</p>
+      <ul class="hero-contact-list">
+        <li><a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a></li>
+        <li><a href="tel:+13136579446">+1-313-657-9446</a></li>
+      </ul>
+    </div>
     <div class="hero-image-wrapper">
       <img src="profile.jpg" alt="Danilo Malovic" class="hero-image">
       <span class="image-popout">This is me by Pebble Beach in California!</span>
@@ -45,55 +57,83 @@
       <div class="about-title">
         <h2 class="section-title">ABOUT.</h2>
       </div>
-      <p class="about-description">I'm an Electrical &amp; Computer Engineering Co-Op student at McMaster University (GPA: 3.5/4.0) and a US &amp; Canadian citizen with experience at Microsoft, General Motors, and Tesla.</p>
-      <span class="experience-tooltip">Click on my experience for more details!</span>
+      <p class="about-description">I'm a Technical Program Manager / Product Manager who loves shipping data-driven platforms and AI experiences. I'm currently an Electrical &amp; Computer Engineering (Co-op) student at McMaster University in Hamilton, Ontario, graduating in May 2026 after rotations at Microsoft, General Motors, and Tesla.</p>
+      <div class="about-info-cards">
+        <div class="info-card">
+          <h3>Citizenship</h3>
+          <p>United States &amp; Canada</p>
+        </div>
+        <div class="info-card">
+          <h3>Location</h3>
+          <p>Hamilton, ON, Canada</p>
+        </div>
+        <div class="info-card">
+          <h3>Education</h3>
+          <p>McMaster University — Electrical &amp; Computer Engineering (Co-op), graduating May 2026</p>
+        </div>
+      </div>
+      <span class="experience-tooltip">Explore each role to see what I shipped.</span>
       <div class="experience-filters">
-        <button class="filter-btn" data-target="work">Work Experience</button>
         <button class="filter-btn active" data-target="all">All Experience</button>
-        <button class="filter-btn" data-target="leadership">Leadership Experience</button>
+        <button class="filter-btn" data-target="work">Work Experience</button>
       </div>
       <div class="experience-content active" id="all">
         <div class="experience-grid">
           <div class="experience-card">
             <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
-            <div>
+            <div class="experience-details">
               <h3>Microsoft</h3>
-              <p>Technical Program Manager Intern – Gaming (May–Aug 2025). Built an OKR/KPI scorecard and Azure OpenAI agent for Xbox leadership.</p>
+              <p class="experience-role">Technical Program Manager Intern – Gaming · Redmond, WA · May–Aug 2025</p>
+              <ul class="experience-highlights">
+                <li>Replaced a legacy KPI vendor with an automated SQL + Power BI platform across eight organizations (~2,000+ employees), delivering 6&times; active-user growth and +32 executive monthly engagement.</li>
+                <li>Launched an Azure OpenAI agent (150+ WAU) for natural-language KPI queries, cutting manual update work by ~85% (~25 hrs/month).</li>
+                <li>Drove discovery and PRD, prioritized with RICE, scoped the MVP, secured cross-org buy-in, and launched four weeks early.</li>
+                <li>Ran usability tests with executives and PMs, halving time to insight and raising query success from 70% to 96%.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="gm.svg" alt="General Motors logo">
-            <div>
+            <div class="experience-details">
               <h3>General Motors</h3>
-              <p>Product Manager Intern – Electrical Strategy (May–Aug 2024). Defined Cadillac Optiq requirements and automated wire harness simulations with a VBA/SQL tool.</p>
+              <p class="experience-role">Product Manager Intern – Electrical Strategy and Execution · Detroit, MI · May–Aug 2024</p>
+              <ul class="experience-highlights">
+                <li>Used data from 50K+ EVs to drive a firmware update cutting battery drain by 8%, boosting CSAT, and mitigating $1.5M+ forecasted warranty exposure.</li>
+                <li>Shipped an MVP EV OTA diagnostic tool to pre-production fleets, reducing engineering triage time by 38%.</li>
+                <li>Authored a Vehicle Data API brief and validated it with 10+ enterprise partners to seed a third-party developer ecosystem.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
-            <div>
+            <div class="experience-details">
               <h3>Tesla</h3>
-              <p>Technical Program Manager Intern – New Product Introduction (Jan–May 2024). Launched new vehicle programs and coordinated compressor changes across factories, saving over $200k.</p>
+              <p class="experience-role">Technical Program Manager Co-op – New Product Introduction · San Jose, CA · Jan–May 2024</p>
+              <ul class="experience-highlights">
+                <li>Led an A/C compressor change across three factories and four models from validation through rollout, unlocking ~$800K/year savings and higher uptime.</li>
+                <li>Delivered Model S Sports Seats on time by coordinating four vendors, two factories, and eight builds for the Model S/X Lunar Silver launch.</li>
+                <li>Owned launch plans for 25+ new vehicle programs, aligning design, suppliers, manufacturing, and quality teams to hit SOP on time.</li>
+                <li>Drove KPI and part-disposition programs with RCA and supplier actions, delivering $200K+ savings and lower OPEX.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
-            <div>
+            <div class="experience-details">
               <h3>Tesla</h3>
-              <p>Electrical Engineering Intern – Equipment Testing (Sep–Dec 2023). Automated robot cleaning enclosures, cutting cycle time and saving up to 10 car bodies per shift.</p>
-            </div>
-          </div>
-          <div class="experience-card">
-            <img class="experience-logo" src="gm.svg" alt="General Motors logo">
-            <div>
-              <h3>General Motors</h3>
-              <p>Manufacturing Engineering Intern – Batteries (May–Aug 2023). Implemented autonomous guided vehicles and PLC HMI screens to boost battery production.</p>
+              <p class="experience-role">Electrical Engineering Co-op – Equipment Testing · San Jose, CA · Sep–Dec 2023</p>
+              <ul class="experience-highlights">
+                <li>Designed and programmed an automated enclosure system for cleaning robot handles, cutting cycle time by 20 minutes per shift (~19 hrs/month) and eliminating defects to avoid losses of 4–10 car bodies per shift.</li>
+                <li>Negotiated a supplier contract with an 18% unit price reduction, lead time cut from 10 to 6 weeks, and a no-charge rework clause, saving ~$30K/year across two paint lines.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="mcmaster.svg" alt="McMaster University logo">
-            <div>
+            <div class="experience-details">
               <h3>McMaster University</h3>
-              <p>Electrical &amp; Computer Engineering Co-Op – Expected May 2026. GPA: 3.5/4.0.</p>
+              <p class="experience-role">Electrical &amp; Computer Engineering (Co-op) · Hamilton, ON · Graduating May 2026</p>
+              <p class="experience-summary">Co-op engineering student building technical program management, product, and automation experience.</p>
             </div>
           </div>
         </div>
@@ -102,60 +142,51 @@
         <div class="experience-grid">
           <div class="experience-card">
             <img class="experience-logo" src="microsoft.svg" alt="Microsoft logo">
-            <div>
+            <div class="experience-details">
               <h3>Microsoft</h3>
-              <p>Technical Program Manager Intern – Gaming (May–Aug 2025). Built an OKR/KPI scorecard and Azure OpenAI agent for Xbox leadership.</p>
+              <p class="experience-role">Technical Program Manager Intern – Gaming · Redmond, WA · May–Aug 2025</p>
+              <ul class="experience-highlights">
+                <li>Replaced a legacy KPI vendor with an automated SQL + Power BI platform across eight organizations (~2,000+ employees), delivering 6&times; active-user growth and +32 executive monthly engagement.</li>
+                <li>Launched an Azure OpenAI agent (150+ WAU) for natural-language KPI queries, cutting manual update work by ~85% (~25 hrs/month).</li>
+                <li>Drove discovery and PRD, prioritized with RICE, scoped the MVP, secured cross-org buy-in, and launched four weeks early.</li>
+                <li>Ran usability tests with executives and PMs, halving time to insight and raising query success from 70% to 96%.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="gm.svg" alt="General Motors logo">
-            <div>
+            <div class="experience-details">
               <h3>General Motors</h3>
-              <p>Product Manager Intern – Electrical Strategy (May–Aug 2024). Defined Cadillac Optiq requirements and automated wire harness simulations with a VBA/SQL tool.</p>
+              <p class="experience-role">Product Manager Intern – Electrical Strategy and Execution · Detroit, MI · May–Aug 2024</p>
+              <ul class="experience-highlights">
+                <li>Used data from 50K+ EVs to drive a firmware update cutting battery drain by 8%, boosting CSAT, and mitigating $1.5M+ forecasted warranty exposure.</li>
+                <li>Shipped an MVP EV OTA diagnostic tool to pre-production fleets, reducing engineering triage time by 38%.</li>
+                <li>Authored a Vehicle Data API brief and validated it with 10+ enterprise partners to seed a third-party developer ecosystem.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
-            <div>
+            <div class="experience-details">
               <h3>Tesla</h3>
-              <p>Technical Program Manager Intern – New Product Introduction (Jan–May 2024). Launched new vehicle programs and coordinated compressor changes across factories, saving over $200k.</p>
+              <p class="experience-role">Technical Program Manager Co-op – New Product Introduction · San Jose, CA · Jan–May 2024</p>
+              <ul class="experience-highlights">
+                <li>Led an A/C compressor change across three factories and four models from validation through rollout, unlocking ~$800K/year savings and higher uptime.</li>
+                <li>Delivered Model S Sports Seats on time by coordinating four vendors, two factories, and eight builds for the Model S/X Lunar Silver launch.</li>
+                <li>Owned launch plans for 25+ new vehicle programs, aligning design, suppliers, manufacturing, and quality teams to hit SOP on time.</li>
+                <li>Drove KPI and part-disposition programs with RCA and supplier actions, delivering $200K+ savings and lower OPEX.</li>
+              </ul>
             </div>
           </div>
           <div class="experience-card">
             <img class="experience-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Tesla_T_symbol.svg" alt="Tesla logo">
-            <div>
+            <div class="experience-details">
               <h3>Tesla</h3>
-              <p>Electrical Engineering Intern – Equipment Testing (Sep–Dec 2023). Automated robot cleaning enclosures, cutting cycle time and saving up to 10 car bodies per shift.</p>
-            </div>
-          </div>
-          <div class="experience-card">
-            <img class="experience-logo" src="gm.svg" alt="General Motors logo">
-            <div>
-              <h3>General Motors</h3>
-              <p>Manufacturing Engineering Intern – Batteries (May–Aug 2023). Implemented autonomous guided vehicles and PLC HMI screens to boost battery production.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="experience-content" id="leadership">
-        <div class="experience-grid">
-          <div class="experience-card">
-            <img class="experience-logo" src="mcmaster.svg" alt="McMaster University logo">
-            <div>
-              <h3>Senior Capstone Design Lead</h3>
-
-              <p>Led design and integration of the Custom Power Inverter project for the senior capstone.</p>
-
-            </div>
-          </div>
-          <div class="experience-card">
-            <img class="experience-logo" src="mcmaster.svg" alt="McMaster University logo">
-            <div>
-              <h3>MAC Formula Electric</h3>
-
-              <p>Senior member of the electrical subteam for the MAC Formula Electric FSAE race car project.</p>
-
-
+              <p class="experience-role">Electrical Engineering Co-op – Equipment Testing · San Jose, CA · Sep–Dec 2023</p>
+              <ul class="experience-highlights">
+                <li>Designed and programmed an automated enclosure system for cleaning robot handles, cutting cycle time by 20 minutes per shift (~19 hrs/month) and eliminating defects to avoid losses of 4–10 car bodies per shift.</li>
+                <li>Negotiated a supplier contract with an 18% unit price reduction, lead time cut from 10 to 6 weeks, and a no-charge rework clause, saving ~$30K/year across two paint lines.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -168,17 +199,66 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
         <div class="project-card">
-          <h3>Custom Power Inverter</h3>
-          <p>Led capstone design of a custom power inverter.</p>
+          <h3>AI Coding Agent for Industrial Automation</h3>
+          <p class="project-meta">Founder · Ontario, Canada · Jun 2025 &ndash; Present</p>
+          <ul class="project-highlights">
+            <li>Built an AI agent IDE that imports PLC projects for ladder-logic editing, generation, and debugging; piloting with small system integrators.</li>
+            <li>Prototyped AI-driven UI/UX patterns for PLC code editing to reimagine ladder-logic visualization and manipulation.</li>
+          </ul>
+          <a class="project-link" href="https://plc.malovic.ca" target="_blank" rel="noopener noreferrer">Visit project &rarr;</a>
         </div>
-        <div class="project-card">
-          <img class="project-logo" src="macfe.svg" alt="MAC Formula Electric logo">
-          <h3>MAC Formula Electric FSAE</h3>
-          <p>Collaborated on electric race car development for Formula SAE.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="full-section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="skills-intro">Toolkits and frameworks I use to deliver AI-enabled products and programs.</p>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>SQL</li>
+            <li>C++</li>
+            <li>C</li>
+            <li>Java</li>
+          </ul>
         </div>
-        <div class="project-card">
-          <h3>Collaborative Electronic Classroom</h3>
-          <p>Built a real-time shared "chalkboard" for synchronized multi-user drawing.</p>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <ul class="skill-list">
+            <li>Power BI</li>
+            <li>Figma</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+            <li>Altium</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Platforms</h3>
+          <ul class="skill-list">
+            <li>Azure OpenAI</li>
+            <li>Power Apps</li>
+            <li>Dataverse</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Methods</h3>
+          <ul class="skill-list">
+            <li>A/B Testing</li>
+            <li>PRD</li>
+            <li>Roadmapping</li>
+            <li>RICE Prioritization</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>AI</h3>
+          <ul class="skill-list">
+            <li>LangChain</li>
+            <li>RAG pipelines</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -187,7 +267,15 @@
   <section id="contact" class="full-section">
     <div class="container">
       <h2 class="section-title">Contact</h2>
-      <p>Feel free to reach out at <a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a>, connect on <a href="https://www.linkedin.com/in/danmalovic/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+      <p>If you'd like to collaborate or just say hello, these are the best ways to reach me.</p>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:danmalovic@gmail.com">danmalovic@gmail.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+13136579446">+1-313-657-9446</a></li>
+        <li><strong>Location:</strong> Hamilton, ON, Canada</li>
+        <li><strong>Website:</strong> <a href="https://malovic.ca" target="_blank" rel="noopener noreferrer">malovic.ca</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/danmalovic/" target="_blank" rel="noopener noreferrer">linkedin.com/in/danmalovic</a></li>
+        <li><strong>Project Site:</strong> <a href="https://plc.malovic.ca" target="_blank" rel="noopener noreferrer">plc.malovic.ca</a></li>
+      </ul>
     </div>
   </section>
   <script src="script.js"></script>
