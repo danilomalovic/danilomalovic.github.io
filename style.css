@@ -26,19 +26,179 @@ a {
 }
 
 
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.topbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.brand {
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.brand:hover,
+.brand:focus-visible {
+  color: var(--accent-color);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+.menu a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: var(--accent-color);
+}
+
+.menu a:hover::before,
+.menu a:focus-visible::before {
+  transform: scaleX(1);
+}
+
 .hero-section {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 0 1.5rem;
-  text-align: center;
+  align-items: center;
+  padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
   scroll-snap-align: start;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 600px;
 }
 
 .hero-section h1 {
   font-size: clamp(3rem, 10vw, 6rem);
   font-weight: 600;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.hero-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.hero-contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-contact-list li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(126, 91, 239, 0.6);
+}
+
+.hero-contact-list a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hero-contact-list a:hover,
+.hero-contact-list a:focus-visible {
+  color: var(--accent-color);
+}
+
+.hero-visual {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(126, 91, 239, 0.65), transparent 70%);
+  z-index: -1;
+  opacity: 0.9;
+  filter: blur(0px);
+}
+
+.hero-image {
+  width: clamp(220px, 28vw, 320px);
+  height: clamp(220px, 28vw, 320px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(126, 91, 239, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
 .about-title {
@@ -379,27 +539,37 @@ section {
 
 @media (max-width: 768px) {
   .topbar {
-    position: fixed;
-    z-index: 1000;
+    background: rgba(20, 20, 20, 0.95);
   }
 
-  .hero-section {
+  .topbar-content {
     flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding-top: 80px;
+    align-items: center;
+    gap: 1rem;
   }
 
   .menu {
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
   }
 
   .menu a {
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: 0.95rem;
   }
 
   .menu a::before {
     display: none;
+  }
+
+  .hero-section {
+    padding: 5.5rem 1.5rem 3rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
   }
 
   .hero-copy {
@@ -408,7 +578,12 @@ section {
   }
 
   .hero-contact-list {
-    align-items: center;
+    justify-content: center;
+    gap: 0.75rem 1rem;
+  }
+
+  .hero-visual::after {
+    inset: -12px;
   }
 
   .hero-image {
