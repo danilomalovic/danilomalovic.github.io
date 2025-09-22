@@ -13,7 +13,9 @@
 
 html {
   scroll-behavior: smooth;
+
   scroll-padding-top: var(--scroll-offset);
+
 }
 
 body {
@@ -108,7 +110,9 @@ a {
   justify-content: center;
   align-items: center;
   padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
+
   scroll-margin-top: var(--scroll-offset);
+
 }
 
 .hero-content {
@@ -185,7 +189,7 @@ a {
 .hero-visual::after {
   content: "";
   position: absolute;
-  inset: -18px;
+  inset: -24px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, rgba(126, 91, 239, 0.65), transparent 70%);
   z-index: -1;
@@ -194,8 +198,8 @@ a {
 }
 
 .hero-image {
-  width: clamp(220px, 28vw, 320px);
-  height: clamp(220px, 28vw, 320px);
+  width: clamp(260px, 32vw, 380px);
+  height: clamp(260px, 32vw, 380px);
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(126, 91, 239, 0.6);
@@ -581,14 +585,14 @@ a {
   }
 
   .hero-visual::after {
-    inset: -12px;
+    inset: -16px;
   }
 
   .hero-image {
-    width: 70vw;
-    height: 70vw;
-    max-width: 300px;
-    max-height: 300px;
+    width: 80vw;
+    height: 80vw;
+    max-width: 340px;
+    max-height: 340px;
   }
 
   .section-title {
