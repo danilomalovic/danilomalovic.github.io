@@ -2,6 +2,7 @@
   --bg-color: #141414;
   --accent-color: #7e5bef;
   --text-color: #ffffff;
+  --scroll-offset: 96px;
 }
 
 * {
@@ -12,6 +13,9 @@
 
 html {
   scroll-behavior: smooth;
+
+  scroll-padding-top: var(--scroll-offset);
+
 }
 
 body {
@@ -106,6 +110,9 @@ a {
   justify-content: center;
   align-items: center;
   padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
+
+  scroll-margin-top: var(--scroll-offset);
+
 }
 
 .hero-content {
@@ -220,6 +227,7 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .container {
