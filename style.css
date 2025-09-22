@@ -2,6 +2,7 @@
   --bg-color: #141414;
   --accent-color: #7e5bef;
   --text-color: #ffffff;
+  --scroll-offset: 96px;
 }
 
 * {
@@ -12,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--scroll-offset);
 }
 
 body {
@@ -107,7 +108,7 @@ a {
   justify-content: center;
   align-items: center;
   padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
-  scroll-snap-align: start;
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .hero-content {
@@ -215,10 +216,6 @@ a {
   margin-bottom: 1rem;
 }
 
-section {
-  scroll-snap-align: start;
-}
-
 .full-section {
   min-height: 100vh;
   padding: 80px 20px;
@@ -226,6 +223,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .container {
