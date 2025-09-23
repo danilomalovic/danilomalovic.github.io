@@ -382,8 +382,8 @@ a {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .experience-content {
@@ -396,19 +396,21 @@ a {
 
 .experience-card {
   background: #1f1f1f;
-  padding: 1.5rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
+  padding: clamp(1.5rem, 2vw, 2rem);
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(1.25rem, 3vw, 2rem);
+  row-gap: 1rem;
+  align-items: start;
   position: relative;
   overflow: hidden;
   text-align: left;
 }
 
 .experience-logo {
-  width: 60px;
-  height: 60px;
+  width: clamp(56px, 6vw, 72px);
+  height: clamp(56px, 6vw, 72px);
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -420,13 +422,47 @@ a {
 .experience-details {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.experience-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-meta span:not(:first-child)::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  margin-right: 0.5rem;
 }
 
 .experience-role {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.5;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.experience-location,
+.experience-dates {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .experience-highlights {
@@ -440,8 +476,19 @@ a {
 }
 
 .experience-summary {
-  line-height: 1.6;
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 640px) {
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-logo {
+    width: 52px;
+    height: 52px;
+  }
 }
 
 .projects-grid {
