@@ -103,13 +103,14 @@ a {
   transform: scaleX(1);
 }
 
+
 .hero-section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(2rem, 6vw, 4rem) 1.5rem 3rem;
+  padding: clamp(1rem, 4vw, 3rem) 1.5rem 3rem;
 
   scroll-margin-top: var(--scroll-offset);
 
