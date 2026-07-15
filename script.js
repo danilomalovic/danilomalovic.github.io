@@ -1,139 +1,78 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.filter-btn');
-  const contents = document.querySelectorAll('.experience-content');
-  const topbar = document.querySelector('.topbar');
+  const header = document.querySelector('[data-header]');
+  const menu = document.querySelector('[data-menu]');
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const menuLabel = menuToggle?.querySelector('.menu-toggle-label');
+  const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+  const sections = [...document.querySelectorAll('main section[id]')];
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const setScrollOffset = () => {
-    const headerHeight = topbar ? topbar.offsetHeight : 0;
-    const offset = Math.round(headerHeight + 24);
-    document.documentElement.style.setProperty('--scroll-offset', `${offset}px`);
-  };
+  const setMenuState = open => {
+    if (!menu || !menuToggle) return;
 
-  const getScrollOffset = () => {
-    const rawValue = getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset');
-    const parsed = parseInt(rawValue, 10);
-    return Number.isNaN(parsed) ? 0 : parsed;
-  };
+    menu.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
 
-  const scrollToTarget = target => {
-    const offset = getScrollOffset();
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
-    });
-  };
-
-  setScrollOffset();
-  window.addEventListener('resize', setScrollOffset);
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = btn.dataset.target;
-
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      contents.forEach(section => {
-        if (section.id === target) {
-          section.classList.add('active');
-        } else {
-          section.classList.remove('active');
-        }
-      });
-    });
-  });
-
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-  anchorLinks.forEach(link => {
-    link.addEventListener('click', event => {
-      const hash = link.getAttribute('href');
-
-      if (!hash || hash === '#') {
-        return;
-      }
-
-      const target = document.querySelector(hash);
-
-      if (!target) {
-        return;
-      }
-
-      event.preventDefault();
-      scrollToTarget(target);
-
-      if (history.pushState) {
-        history.pushState(null, '', hash);
-      } else {
-        window.location.hash = hash;
-      }
-    });
-  });
-
-  const contactForm = document.querySelector('#contact-form');
-  const formStatus = document.querySelector('#contact-form-status');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', async event => {
-      event.preventDefault();
-
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton ? submitButton.textContent : '';
-
-      if (submitButton) {
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending…';
-      }
-
-      if (formStatus) {
-        formStatus.textContent = 'Sending your message…';
-        formStatus.classList.remove('success', 'error');
-      }
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            Accept: 'application/json',
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error('Unable to submit form');
-        }
-
-        if (formStatus) {
-          formStatus.textContent = "Thanks for reaching out! I'll get back to you soon.";
-          formStatus.classList.add('success');
-        }
-
-        contactForm.reset();
-      } catch (error) {
-        if (formStatus) {
-          formStatus.textContent = 'Sorry, something went wrong. Please try again or reach out via LinkedIn.';
-          formStatus.classList.add('error');
-        }
-      } finally {
-        if (submitButton) {
-          submitButton.disabled = false;
-          submitButton.textContent = originalButtonText;
-        }
-      }
-    });
-  }
-
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-
-    if (target) {
-      requestAnimationFrame(() => {
-        scrollToTarget(target);
-      });
+    if (menuLabel) {
+      menuLabel.textContent = open ? 'Close' : 'Menu';
     }
+  };
+
+  menuToggle?.addEventListener('click', () => {
+    setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(item => item.classList.toggle('active', item === link));
+      setMenuState(false);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 780) setMenuState(false);
+  });
+
+  const updateHeader = () => {
+    header?.classList.toggle('scrolled', window.scrollY > 20);
+  };
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  const revealItems = document.querySelectorAll('[data-reveal]');
+
+  if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    revealItems.forEach(item => revealObserver.observe(item));
   }
+
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
+      });
+    }, { threshold: [0.25, 0.45, 0.7], rootMargin: '-20% 0px -55% 0px' });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  const year = document.querySelector('[data-year]');
+  if (year) year.textContent = String(new Date().getFullYear());
 });
