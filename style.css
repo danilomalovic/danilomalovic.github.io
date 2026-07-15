@@ -493,11 +493,9 @@ textarea {
   object-fit: contain;
 }
 
-.logo-word {
-  background: #e82127;
-  color: white;
-  font-family: Georgia, serif;
-  font-size: 2rem;
+.logo-tile img.tesla-mark {
+  width: 60%;
+  height: 60%;
 }
 
 .company-lockup h3,
