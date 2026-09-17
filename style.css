@@ -1208,7 +1208,6 @@ textarea {
 
 /* Current work and editorial pages */
 .hero-background { max-width: 600px; color: var(--ink-soft); font-size: .94rem; margin: 18px 0 0; }
-.company-initial { font-size: 1.5rem; font-weight: 800; background: var(--ink); color: white; }
 .current-role { color: var(--ink-soft); font-size: .84rem; font-weight: 700; }
 .project-detail-link { margin-top: 20px; color: white; text-underline-offset: 5px; }
 .detail-main { padding: calc(var(--header-height) + 72px) 0 100px; }
