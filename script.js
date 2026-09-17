@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const menuLabel = menuToggle?.querySelector('.menu-toggle-label');
   const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+  document.querySelectorAll('.site-nav a').forEach(link => link.addEventListener('click', () => setMenuState(false)));
   const sections = [...document.querySelectorAll('main section[id]')];
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
+  document.documentElement.classList.add('js-reveal');
   const revealItems = document.querySelectorAll('[data-reveal]');
 
   if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
